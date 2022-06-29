@@ -1,5 +1,5 @@
-import * as functions from "./functions";
-import * as constants from "./constants";
+import * as functions from "./functions.js";
+import * as constants from "./constants.js";
 
 export default class BloatedMath {
     constructor() {}

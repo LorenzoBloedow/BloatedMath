@@ -1,2 +1,2 @@
 # BloatedMath
-Extensive JavaScript/TypeScript Math Library.
+Extensive JavaScript Math Library Written In TypeScript.
