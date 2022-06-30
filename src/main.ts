@@ -1,5 +1,5 @@
-import * as functions from "./functions.js";
-import * as constants from "./constants.js";
+import * as functions from "./functions";
+import * as constants from "./constants";
 
 export default class BloatedMath {
     constructor() {}
@@ -109,23 +109,23 @@ export default class BloatedMath {
     
 
     // Methods.
-    static isPrime(n: bigint): boolean {
+    static isPrime(n: number): boolean {
         return functions.isPrime(n);
     }
 
-    static isComposite(n: bigint): boolean {
+    static isComposite(n: number): boolean {
         return functions.isComposite(n);
     }
 
-    static isOdd(n: bigint): boolean {
+    static isOdd(n: number): boolean {
         return functions.isOdd(n);
     }
 
-    static isEven(n: bigint): boolean {
+    static isEven(n: number): boolean {
         return functions.isEven(n);
     }
 
-    static parity(n: bigint): string {
+    static parity(n: number): string {
         return functions.parity(n)
     }
 
