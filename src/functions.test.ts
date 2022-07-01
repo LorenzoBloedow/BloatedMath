@@ -3,22 +3,26 @@ import * as functions from "./functions";
 // isOdd(n)
 describe("Return whether a number is odd or not.", () => {
     it("Will throw an error for floating-point numbers.", () => {
-        expect(functions.isOdd(1.1)).toThrow();
-        expect(functions.isOdd(1.2)).toThrow();
+        expect(() => functions.isOdd(1.1)).toThrow();
+        expect(() => functions.isOdd(1.2)).toThrow();
 
-        expect(functions.isOdd(-1.1)).toThrow();
-        expect(functions.isOdd(-1.2)).toThrow();
+        expect(() => functions.isOdd(-1.1)).toThrow();
+        expect(() => functions.isOdd(-1.2)).toThrow();
 
-        expect(functions.isOdd(2.1)).toThrow();
-        expect(functions.isOdd(2.2)).toThrow();
+        expect(() => functions.isOdd(2.1)).toThrow();
+        expect(() => functions.isOdd(2.2)).toThrow();
     });
 
     it("Will return false for 0.", () => {
         expect(functions.isOdd(0)).toEqual(false);
     });
 
-    it("Will return whether a number is odd regardless if it's negative or not.", () => {
-        
+    it("Will return if a number is odd regardless whether it's negative or not.", () => {
+        expect(functions.isOdd(1)).toEqual(true);
+        expect(functions.isOdd(2)).toEqual(false);
+
+        expect(functions.isOdd(-1)).toEqual(true);
+        expect(functions.isOdd(-2)).toEqual(false);
     });
 });
 
@@ -177,7 +181,7 @@ describe("Return an array containing the divisors of a number.", () => {
         expect(functions.divisors(2.2)).toEqual([]);
     });
     
-    it("Will return the negative divisors of a negative number.", () => {
+    it("Will return the negative divisors of a negative integer.", () => {
         expect(functions.divisors(-1)).toEqual([-1]);
         expect(functions.divisors(-25)).toEqual([-1, -5, -25]);
     

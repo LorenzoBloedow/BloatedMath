@@ -109,23 +109,42 @@ export function divisors(n: number): number[] {
         isNegative = true;
     }
 
-    let divisorArray: number[] = [];
+    let divisors: number[] = [];
     for (let i: number = 1; i <= n; i++) {
         if (n % i == 0) {
-            isNegative ? divisorArray.push(-Math.abs(i)) : divisorArray.push(i);
+            isNegative ? divisors.push(-Math.abs(i)) : divisors.push(i);
         }
     }
-    return divisorArray;
+    return divisors;
 }
 
-export function firstHundredMultiples(n: number) {
-    // Return array of the first 100 multiples of a number.  
+// Return array of the first 100 multiples of a number unless the number is 0.
+export function firstHundredMultiples(n: number): number[] {
+
+    if (n === 0) {
+        return [0];
+    }
+
+    var multiples: number[] = [];
+    for (let i = 0; i < 100; i++) {
+        multiples.push(n * i);
+    }
+    return multiples;
 }
 
 // GCF
 
 // LCM
 
-// Fibonacci numbers
+/** The Fibonacci numbers.
+ * @param {number} n - The amount of fibonacci numbers you want.
+ */
+export function fibonacciNumbers(n: number) {
+
+}
+
+export function isFibonacciNumber(n: number) {
+
+}
 
 // A005132
