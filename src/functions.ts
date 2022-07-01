@@ -118,15 +118,22 @@ export function divisors(n: number): number[] {
     return divisors;
 }
 
-// Return an array of the first 100 multiples of a number unless the number is 0.
-export function firstHundredMultiples(n: number): number[] {
+/** Returns an array containing the 'amount' first multiples of 'n'.
+ *  
+ * If 'n' is 0 it returns [0].
+ */
+export function multiples(n: number, amount: number): number[] {
+
+    if (amount <= 0) {
+        return [];
+    }
 
     if (n === 0) {
         return [0];
     }
 
     var multiples: number[] = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < amount; i++) {
         multiples.push(n * i);
     }
     return multiples;
