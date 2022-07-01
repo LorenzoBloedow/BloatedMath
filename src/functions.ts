@@ -118,7 +118,7 @@ export function divisors(n: number): number[] {
     return divisors;
 }
 
-// Return array of the first 100 multiples of a number unless the number is 0.
+// Return an array of the first 100 multiples of a number unless the number is 0.
 export function firstHundredMultiples(n: number): number[] {
 
     if (n === 0) {
@@ -132,19 +132,59 @@ export function firstHundredMultiples(n: number): number[] {
     return multiples;
 }
 
+/** The Fibonacci sequence.
+ * @param {number} n - The amount of Fibonacci numbers you want.
+ */
+export function fibonacciSequence(n: number): number[] {
+    if (n <= 0) {
+        return [];
+    }
+    
+    if (n === 1) {
+        return [0];
+    }
+    var counter: number = n - 2;
+    var fibonacciSequenceArray: number[] = [0, 1];
+    for (let i = 0; i < counter; i++) {
+        fibonacciSequenceArray.push(fibonacciSequenceArray[i] + fibonacciSequenceArray[i + 1]);
+    }
+    return fibonacciSequenceArray;
+}
+
+/** Whether a number is a Fibonacci number or not.
+ * @param {number} n - The number you want to query.
+ */
+export function isFibonacciNumber(n: number): boolean {
+    if (n < 0) {
+        return false;
+    }
+    
+    if (n === 0 || n === 1) {
+        return true;
+    }
+
+    var fibonacciSequenceArray: number[] = [0, 1];
+    var i = 0;
+    while (i < 10000000000) {
+        fibonacciSequenceArray.push(fibonacciSequenceArray[i] + fibonacciSequenceArray[i + 1]);
+        if (fibonacciSequenceArray[fibonacciSequenceArray.length -1] === n) {
+            return true;
+        }
+        if (fibonacciSequenceArray[fibonacciSequenceArray.length -1] > n) {
+            return false;
+        }
+        i++;
+    }
+
+    if (i === 10000000000) {
+        throw new Error("'n' exceeded the maximum size.");
+    }
+
+    throw new Error("Something unexpected happened.");
+}
+
 // GCF
 
 // LCM
-
-/** The Fibonacci numbers.
- * @param {number} n - The amount of fibonacci numbers you want.
- */
-export function fibonacciNumbers(n: number) {
-
-}
-
-export function isFibonacciNumber(n: number) {
-
-}
 
 // A005132
