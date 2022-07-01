@@ -2,11 +2,24 @@ import * as functions from "./functions";
 
 // isOdd(n)
 describe("Return whether a number is odd or not.", () => {
-    it.todo("Will throw an error for floating-point numbers.");
+    it("Will throw an error for floating-point numbers.", () => {
+        expect(functions.isOdd(1.1)).toThrow();
+        expect(functions.isOdd(1.2)).toThrow();
 
-    it.todo("Will return false for 0.")
+        expect(functions.isOdd(-1.1)).toThrow();
+        expect(functions.isOdd(-1.2)).toThrow();
 
-    it.todo("Will return whether a number is odd regardless if it's negative or not.")
+        expect(functions.isOdd(2.1)).toThrow();
+        expect(functions.isOdd(2.2)).toThrow();
+    });
+
+    it("Will return false for 0.", () => {
+        expect(functions.isOdd(0)).toEqual(false);
+    });
+
+    it("Will return whether a number is odd regardless if it's negative or not.", () => {
+        
+    });
 });
 
 // isPrime(n)
