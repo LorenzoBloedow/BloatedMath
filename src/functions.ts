@@ -32,13 +32,13 @@ export function isComposite(n: number): boolean {
 
 export function isOdd(n: number): boolean {
     if (n != Math.trunc(n))
-        throw new Error("Cannot determine the parity of a floating-point number.");
+        throw new Error("Cannot determine whether a floating-point number is odd.");
     return !(n % 2 == 0);  
 }
 
 export function isEven(n: number): boolean {
     if (n != Math.trunc(n))
-        throw new Error("Cannot determine the parity of a floating-point number.");
+        throw new Error("Cannot determine whether a floating-point number is even.");
     return (n % 2 == 0);
 }
 
@@ -121,8 +121,11 @@ export function divisors(n: number): number[] {
 /** Returns an array containing the 'amount' first multiples of 'n'.
  *  
  * If 'n' is 0 it returns [0].
+ * If 'amount' is a floating-point number it gets truncated.
  */
 export function multiples(n: number, amount: number): number[] {
+
+    amount = Math.trunc(amount);
 
     if (amount <= 0) {
         return [];
@@ -136,6 +139,13 @@ export function multiples(n: number, amount: number): number[] {
     for (let i = 0; i < amount; i++) {
         multiples.push(n * i);
     }
+
+    if (n !== Math.trunc(n)) {
+        multiples = multiples.map(e => {
+            return (e !== Math.trunc(e)) ? parseFloat(e.toPrecision(3)) : e;
+        });
+    }
+
     return multiples;
 }
 
@@ -143,6 +153,8 @@ export function multiples(n: number, amount: number): number[] {
  * @param {number} n - The amount of Fibonacci numbers you want.
  */
 export function fibonacciSequence(n: number): number[] {
+    n = (n !== Math.trunc(n)) ? Math.trunc(n) : n;
+
     if (n <= 0) {
         return [];
     }
@@ -172,7 +184,7 @@ export function isFibonacciNumber(n: number): boolean {
 
     var fibonacciSequenceArray: number[] = [0, 1];
     var i = 0;
-    while (i < 10000000000) {
+    while (i < 100000) {
         fibonacciSequenceArray.push(fibonacciSequenceArray[i] + fibonacciSequenceArray[i + 1]);
         if (fibonacciSequenceArray[fibonacciSequenceArray.length -1] === n) {
             return true;
@@ -183,8 +195,8 @@ export function isFibonacciNumber(n: number): boolean {
         i++;
     }
 
-    if (i === 10000000000) {
-        throw new Error("'n' exceeded the maximum size.");
+    if (i === 100000) {
+        throw new Error("'n' exceeded its maximum size.");
     }
 
     throw new Error("Something unexpected happened.");
