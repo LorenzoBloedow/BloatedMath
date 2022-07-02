@@ -30,21 +30,24 @@ export function isComposite(n: number): boolean {
     return false;
 }
 
-export function isOdd(n: number): boolean {
-    if (n != Math.trunc(n))
-        throw new Error("Cannot determine whether a floating-point number is odd.");
+export function isOdd(n: number): boolean | null {
+    if (n !== Math.trunc(n)) {
+        return null;
+    }
     return !(n % 2 == 0);  
 }
 
-export function isEven(n: number): boolean {
-    if (n != Math.trunc(n))
-        throw new Error("Cannot determine whether a floating-point number is even.");
+export function isEven(n: number): boolean | null {
+    if (n !== Math.trunc(n)) {
+        return null;
+    }
     return (n % 2 == 0);
 }
 
-export function parity(n: number): string {
-    if (n != Math.trunc(n))
-        throw new Error("Cannot determine the parity of a floating-point number.");
+export function parity(n: number): string | null {
+    if (n !== Math.trunc(n)) {
+        return null;
+    }
     return (n % 2 == 0) ? "Even" : "Odd";
 }
 
@@ -202,7 +205,7 @@ export function isFibonacciNumber(n: number): boolean {
     throw new Error("Something unexpected happened.");
 }
 
-// GCF
+// GCD
 
 // LCM
 

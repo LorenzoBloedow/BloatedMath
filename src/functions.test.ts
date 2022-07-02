@@ -69,15 +69,15 @@ describe("Return whether a number is composite or not", () => {
 
 // isOdd(n)
 describe("Return whether a number is odd or not.", () => {
-    it("Will throw for floating-point numbers.", () => {
-        expect(() => functions.isOdd(1.1)).toThrow();
-        expect(() => functions.isOdd(1.2)).toThrow();
+    it("Will return null for floating-point numbers.", () => {
+        expect(functions.isOdd(1.1)).toBeNull();
+        expect(functions.isOdd(1.2)).toBeNull();
 
-        expect(() => functions.isOdd(-1.1)).toThrow();
-        expect(() => functions.isOdd(-1.2)).toThrow();
+        expect(functions.isOdd(-1.1)).toBeNull();
+        expect(functions.isOdd(-1.2)).toBeNull();
 
-        expect(() => functions.isOdd(2.1)).toThrow();
-        expect(() => functions.isOdd(2.2)).toThrow();
+        expect(functions.isOdd(2.1)).toBeNull();
+        expect(functions.isOdd(2.2)).toBeNull();
     });
 
     it("Will return false for 0.", () => {
@@ -95,15 +95,15 @@ describe("Return whether a number is odd or not.", () => {
 
 // isEven(n)
 describe("Return whether a number is even or not.", () => {
-    it("Will throw for floating-point numbers.", () => {
-        expect(() => functions.isEven(1.1)).toThrow();
-        expect(() => functions.isEven(1.2)).toThrow();
+    it("Will return null for floating-point numbers.", () => {
+        expect(functions.isEven(1.1)).toBeNull();
+        expect(functions.isEven(1.2)).toBeNull();
 
-        expect(() => functions.isEven(-1.1)).toThrow();
-        expect(() => functions.isEven(-1.2)).toThrow();
+        expect(functions.isEven(-1.1)).toBeNull();
+        expect(functions.isEven(-1.2)).toBeNull();
 
-        expect(() => functions.isEven(2.1)).toThrow();
-        expect(() => functions.isEven(2.2)).toThrow();
+        expect(functions.isEven(2.1)).toBeNull();
+        expect(functions.isEven(2.2)).toBeNull();
     });
 
     it("Will return true for 0.", () => {
@@ -121,15 +121,15 @@ describe("Return whether a number is even or not.", () => {
 
 // parity(n)
 describe("Return the parity of a number.", () => {
-    it("Will throw for floating-point numbers.", () => {
-        expect(() => functions.parity(1.1)).toThrow();
-        expect(() => functions.parity(1.2)).toThrow();
+    it("Will return null for floating-point numbers.", () => {
+        expect(functions.parity(1.1)).toBeNull();
+        expect(functions.parity(1.2)).toBeNull();
 
-        expect(() => functions.parity(-1.1)).toThrow();
-        expect(() => functions.parity(-1.2)).toThrow();
+        expect(functions.parity(-1.1)).toBeNull();
+        expect(functions.parity(-1.2)).toBeNull();
 
-        expect(() => functions.parity(2.1)).toThrow();
-        expect(() => functions.parity(2.2)).toThrow();
+        expect(functions.parity(2.1)).toBeNull();
+        expect(functions.parity(2.2)).toBeNull();
     });
 
     it("Will return 'Even' for 0.", () => {
@@ -340,4 +340,14 @@ describe("Return whether a number is a Fibonacci number or not.", () => {
         expect(functions.isFibonacciNumber(21)).toEqual(true);
         expect(functions.isFibonacciNumber(12200160415121877000)).toEqual(true);
     });
+});
+
+describe("Return the greatest common divisor of two or more integers.", () => {
+    it.todo("Will return null if any of the elements in the array is a floating-point number.");
+
+    it.todo("Will return 0 if all the elements in the array are zeroes.");
+
+    it.todo("Will return a positive GCD if any or all of the elements are negative.");
+
+    it.todo("Will return a positive GCD if any or all of the elements are positive.")
 });
