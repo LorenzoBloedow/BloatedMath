@@ -276,7 +276,7 @@ describe("Return a specified amount of the multiples of a number.", () => {
         expect(functions.multiples(2, -4)).toEqual([]);
     });
 
-    it("Will return [0] if the number is 0 or -0", () => {
+    it("Will return [0] if the number is 0 or -0.", () => {
         expect(functions.multiples(0, 363)).toEqual([0]);
         expect(functions.multiples(-0, 2)).toEqual([0]);
     });
@@ -343,11 +343,35 @@ describe("Return whether a number is a Fibonacci number or not.", () => {
 });
 
 describe("Return the greatest common divisor of two or more integers.", () => {
-    it.todo("Will return null if any of the elements in the array is a floating-point number.");
+    it("Will return null if the array is empty.", () => {
+        expect(functions.greatestCommonDivisor([])).toBeNull();
+    });
 
-    it.todo("Will return 0 if all the elements in the array are zeroes.");
+    it("Will return null if the array only has one element.", () => {
+        expect(functions.greatestCommonDivisor([7])).toBeNull();
+    });
 
-    it.todo("Will return a positive GCD if any or all of the elements are negative.");
+    it("Will return null if any of the elements in the array is a floating-point number.", () => {
+        expect(functions.greatestCommonDivisor([5, 0, 2, 67, 8, 2, -9, 1, 3, 4.3, 7])).toBeNull();
+    });
 
-    it.todo("Will return a positive GCD if any or all of the elements are positive.")
+    it("Will return 0 if all the elements in the array are zeros.", () => {
+        expect(functions.greatestCommonDivisor([0, 0])).toBe(0);
+        expect(functions.greatestCommonDivisor([0, 0, 0, 0, 0, 0, 0, 0])).toBe(0);
+    });
+
+    it("Will ignore all the zeros if there's at least one integer that's not a zero.", () => {
+        expect(functions.greatestCommonDivisor([4, 0])).not.toBe(0);
+        expect(functions.greatestCommonDivisor([0, 4, 2, 6, 0, 28])).not.toBe(0);
+    });
+
+    it("Will return a positive GCD if any or all of the elements are negative.", () => {
+        expect(functions.greatestCommonDivisor([3, -9, 12])).toBe(3);
+        expect(functions.greatestCommonDivisor([-4, -8, -12, -16, -20])).toBe(4);
+    });
+
+    it("Will return a positive GCD if the elements are positive.", () => {
+        expect(functions.greatestCommonDivisor([30, 20, 30, 40, 50, 80, 60])).toBe(10);
+        expect(functions.greatestCommonDivisor([865, 23472, 5455, 5435, 76745, 8654])).toBe(1);
+    });
 });

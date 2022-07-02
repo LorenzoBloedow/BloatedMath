@@ -205,7 +205,75 @@ export function isFibonacciNumber(n: number): boolean {
     throw new Error("Something unexpected happened.");
 }
 
-// GCD
+/**
+ * Find the greatest common divisor of two or more integers.
+ * 
+ * Returns undefined if it can't find the GCD.
+ */
+export function greatestCommonDivisor(numbers: number[]) : number | null | undefined {
+    if (numbers.length === 0 || numbers.length === 1) {
+        return null;
+    }
+
+    // Check if there are any floating-point numbers.
+    for (const e of numbers) {
+        if (e !== Math.trunc(e)) {
+            return null;
+        }
+    }
+
+    allZerosCheck:
+    {
+        for (const e of numbers) {
+            if (e !== 0) {
+                break allZerosCheck;
+            }
+        }
+        return 0;
+    }
+
+    // Ignore zeros and convert any negative integers to positive.
+    numbers = numbers.filter(e => e !== 0)
+                .map(e => Math.abs(e));
+
+    var originalNumbers: number[] = [...numbers];
+    // Only leave the smallest element in the array.
+    while (numbers.length !== 1) {
+        if (numbers[0] >= numbers[1]) {
+            numbers.shift();
+        }
+        else {
+            numbers.splice(1, 1);
+        }
+    }
+
+    const numbersDivisors: number[][] = [];
+    for (const e of originalNumbers) {
+        numbersDivisors.push(divisors(e));
+    }
+
+    // Filter the divisors of the integers in 'numbers'.
+    const filteredNumbersDivisors: number[][] = [];
+    numbersDivisors.filter(function (array) {
+        filteredNumbersDivisors.push(array.filter(e => e <= numbers[0]));
+    });
+
+    var currentGCD: number;
+
+    outerLoop:
+    for (let i = 1; i <= filteredNumbersDivisors[0].length; i++) {
+        currentGCD = filteredNumbersDivisors[0][filteredNumbersDivisors[0].length - i];
+
+        for (const e of filteredNumbersDivisors) {
+            if (!e.includes(currentGCD)) {
+                continue outerLoop;
+            }
+        }
+
+        return currentGCD;
+    }
+    return undefined;
+}
 
 // LCM
 
