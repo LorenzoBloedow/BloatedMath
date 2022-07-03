@@ -365,13 +365,25 @@ describe("Return the greatest common divisor of two or more integers.", () => {
         expect(functions.greatestCommonDivisor([0, 4, 2, 6, 0, 28])).not.toBe(0);
     });
 
-    it("Will return a positive GCD if any or all of the elements are negative.", () => {
+    it("Will return a positive GCD if one or more of the integers are negative.", () => {
         expect(functions.greatestCommonDivisor([3, -9, 12])).toBe(3);
         expect(functions.greatestCommonDivisor([-4, -8, -12, -16, -20])).toBe(4);
     });
 
-    it("Will return a positive GCD if the elements are positive.", () => {
+    it("Will return a positive GCD if the integers are positive.", () => {
         expect(functions.greatestCommonDivisor([30, 20, 30, 40, 50, 80, 60])).toBe(10);
         expect(functions.greatestCommonDivisor([865, 23472, 5455, 5435, 76745, 8654])).toBe(1);
+    });
+
+    describe("Return the least common multiple of two integers.", () => {
+        it.todo("Will return null if one or both numbers are floating-point numbers.");
+
+        it.todo("Will return 0 if one or both integers are 0.");
+
+        it.todo("Will return null if called with any number of integers other than 2.");
+
+        it.todo("Will return a positive LCM if one or both of the integers are negative.");
+
+        it.todo("Will return a positive LCM if the integers are positive.");
     });
 });
