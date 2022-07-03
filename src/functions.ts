@@ -187,7 +187,7 @@ export function isFibonacciNumber(n: number): boolean {
 
     var fibonacciSequenceArray: number[] = [0, 1];
     var i = 0;
-    while (i < 100000) {
+    while (i < Number.MAX_SAFE_INTEGER) {
         fibonacciSequenceArray.push(fibonacciSequenceArray[i] + fibonacciSequenceArray[i + 1]);
         if (fibonacciSequenceArray[fibonacciSequenceArray.length -1] === n) {
             return true;
@@ -198,7 +198,7 @@ export function isFibonacciNumber(n: number): boolean {
         i++;
     }
 
-    if (i === 100000) {
+    if (i === Number.MAX_SAFE_INTEGER) {
         throw new Error("'n' exceeded its maximum size.");
     }
 
@@ -275,6 +275,44 @@ export function greatestCommonDivisor(numbers: number[]) : number | null | undef
     return undefined;
 }
 
-// LCM
+/** The least common multiple of two integers.
+ * 
+ * Maximum LCM size: Number.MAX_SAFE_INTEGER - 1.
+ */
+export function leastCommonMultiple(numbers: number[]) : number | null {
+    if (numbers.length < 2) {
+        return null;
+    }
+
+    for (const e of numbers) {
+        if (e !== Math.trunc(e)) {
+            return null;
+        }
+    }
+
+    for (const e of numbers) {
+        if (e === 0) {
+            return 0;
+        }
+    }
+    
+    numbers = numbers.map(e => Math.abs(e));
+
+    // The LCM will always be greater than or equal to the largest number of the array.
+    var currentLCM: number = Math.max(...numbers);
+
+    for (let i: number = 0; ((i < numbers.length) && (currentLCM < Number.MAX_SAFE_INTEGER)); i++) {
+        if (!(currentLCM % numbers[i] === 0)) {
+            i = -1;
+            currentLCM++;
+        }
+    }
+
+    if (currentLCM === Number.MAX_SAFE_INTEGER) {
+        throw new Error("The LCM exceeded its maximum size.");
+    }
+
+    return currentLCM;
+}
 
 // A005132

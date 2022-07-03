@@ -375,15 +375,35 @@ describe("Return the greatest common divisor of two or more integers.", () => {
         expect(functions.greatestCommonDivisor([865, 23472, 5455, 5435, 76745, 8654])).toBe(1);
     });
 
-    describe("Return the least common multiple of two integers.", () => {
-        it.todo("Will return null if one or both numbers are floating-point numbers.");
+    describe("Return the least common multiple of two or more integers.", () => {
+        it("Will return null if one or all numbers are floating-point numbers.", () => {
+            expect(functions.leastCommonMultiple([5, 2, 7.4])).toBeNull();
+            expect(functions.leastCommonMultiple([6.2, 1.3])).toBeNull();
+        });
 
-        it.todo("Will return 0 if one or both integers are 0.");
+        it("Will return 0 if one or all integers are 0.", () => {
+            expect(functions.leastCommonMultiple([63, 72, 0, 3])).toBe(0);
+            expect(functions.leastCommonMultiple([0, 0, 0, 0])).toBe(0);
+        });
 
-        it.todo("Will return null if called with any number of integers other than 2.");
+        it("Will return null if called with less than the minimum amount of integers.", () => {
+            expect(functions.leastCommonMultiple([])).toBeNull();
+            expect(functions.leastCommonMultiple([4])).toBeNull();
+        });
 
-        it.todo("Will return a positive LCM if one or both of the integers are negative.");
+        it("Will return a positive LCM if one or all integers are negative.", () => {
+            expect(functions.leastCommonMultiple([5, -77, 6, 20])).toBe(4620);
+            expect(functions.leastCommonMultiple([-1, -78, -8])).toBe(312);
+        });
 
-        it.todo("Will return a positive LCM if the integers are positive.");
+        it("Will return a positive LCM if the integers are positive.", () => {
+            expect(functions.leastCommonMultiple([4, 6])).toBe(12);
+            expect(functions.leastCommonMultiple([10, 5])).toBe(10);
+            expect(functions.leastCommonMultiple([6546, 2394, 452])).toBe(590_279_004);
+        });
+
+        it("Will throw if the LCM exceeds its maximum size.", () => {
+            expect(() => functions.leastCommonMultiple([634, 234, 58, Number.MAX_SAFE_INTEGER, 5])).toThrow();
+        });
     });
 });
