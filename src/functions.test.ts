@@ -409,23 +409,26 @@ describe("Return the greatest common divisor of two or more integers.", () => {
 
     describe("Return the first 'n' terms of the Recaman's sequence.", () => {
         it("Will return null if the number is a floating-point number.", () => {
-
+            expect(functions.recamanSequence(3.2)).toBeNull();
         });
 
         it("Will return null if the integer is 0.", () => {
-
+            expect(functions.recamanSequence(0)).toBeNull();
         });
 
         it("Will return null if the integer is negative.", () => {
-
+            expect(functions.recamanSequence(-4)).toBeNull();
         });
 
         it("Will return 0 if the integer is 1.", () => {
-
+            expect(functions.recamanSequence(1)).toBe(0);
         });
 
         it("Will return the first 'n' terms of the sequence if the integer is positive.", () => {
-            
+            expect(functions.recamanSequence(2)).toStrictEqual([0, 1]);
+            expect(functions.recamanSequence(4)).toStrictEqual([0, 1, 3, 6]);
+            expect(functions.recamanSequence(15)).toStrictEqual([0, 1, 3, 6, 2, 7, 13,
+                                                                 20, 12, 21, 11, 22, 10, 23, 9]);
         });
     });
 });

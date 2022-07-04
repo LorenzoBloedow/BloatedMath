@@ -315,4 +315,32 @@ export function leastCommonMultiple(numbers: number[]) : number | null {
     return currentLCM;
 }
 
-// A005132
+// Recaman's sequence (A005132).
+export function recamanSequence(n: number): number | number[] | null {
+    if (n !== Math.trunc(n)) {
+        return null;
+    }
+
+    if (n <= 0) {
+        return null;
+    }
+
+    if (n === 1) {
+        return 0;
+    }
+
+    var sequence: number[] = [0, 1];
+    let firstTry: number;
+    for (let i = 2; (i < n) && (i < Number.MAX_SAFE_INTEGER); i++) {
+
+        firstTry = sequence[i - 1] - i;
+        if ((firstTry > 0) && (sequence.indexOf(firstTry) === -1)) {
+            sequence.push(firstTry);
+        }
+        else {
+            sequence.push(sequence[i - 1] + i);
+        }
+    }
+
+    return sequence;
+}
