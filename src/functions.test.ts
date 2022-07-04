@@ -406,4 +406,26 @@ describe("Return the greatest common divisor of two or more integers.", () => {
             expect(() => functions.leastCommonMultiple([634, 234, 58, Number.MAX_SAFE_INTEGER, 5])).toThrow();
         });
     });
+
+    describe("Return the first 'n' terms of the Recaman's sequence.", () => {
+        it("Will return null if the number is a floating-point number.", () => {
+
+        });
+
+        it("Will return null if the integer is 0.", () => {
+
+        });
+
+        it("Will return null if the integer is negative.", () => {
+
+        });
+
+        it("Will return 0 if the integer is 1.", () => {
+
+        });
+
+        it("Will return the first 'n' terms of the sequence if the integer is positive.", () => {
+            
+        });
+    });
 });
