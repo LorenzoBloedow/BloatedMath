@@ -344,3 +344,17 @@ export function recamanSequence(n: number): number | number[] | null {
 
     return sequence;
 }
+
+/** Returns the area of a circle.
+ * 
+ * 'radius' is rounded to the nearest decimal in a two fractional digits fixed-point notation.
+ */
+export function circleArea(radius: number) {
+    if (radius <= 0) {
+        return null;
+    }
+
+    return parseFloat((Math.PI * (radius * radius)).toFixed(2));
+}
+
+/** Returns at most two solutions of a quadratic equation. */

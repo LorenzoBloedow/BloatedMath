@@ -431,4 +431,26 @@ describe("Return the greatest common divisor of two or more integers.", () => {
                                                                  20, 12, 21, 11, 22, 10, 23, 9]);
         });
     });
+
+    describe("Return the area of a circle with a fixed-point notation.", () => {
+        it("Will return null if the number is 0.", () => {
+            expect(functions.circleArea(0)).toBeNull();
+        });
+
+        it("Will return null if the number is negative.", () => {
+            expect(functions.circleArea(-3)).toBeNull();
+        });
+
+        it("Will return the area of a circle given a positive floating-point number or integer.", () => {
+            expect(functions.circleArea(2.3)).toBe(16.62);
+            expect(functions.circleArea(143)).toBe(64242.43);
+            expect(functions.circleArea(1)).toBe(3.14);
+            expect(functions.circleArea(5)).toBe(78.54);
+            expect(functions.circleArea(0.78)).toBe(1.91);
+            expect(functions.circleArea(0.07)).toBe(0.02);
+            expect(functions.circleArea(0.32)).toBe(0.32);
+        });
+    });
+    
+
 });
