@@ -349,7 +349,7 @@ export function recamanSequence(n: number): number | number[] | null {
  * 
  * 'radius' is rounded to the nearest decimal in a two fractional digits fixed-point notation.
  */
-export function circleArea(radius: number) {
+export function circleArea(radius: number): number | null {
     if (radius <= 0) {
         return null;
     }
@@ -357,4 +357,28 @@ export function circleArea(radius: number) {
     return parseFloat((Math.PI * (radius * radius)).toFixed(2));
 }
 
-/** Returns at most two solutions of a quadratic equation. */
+/** Returns the solution or solutions of a quadratic equation. */
+export function quadraticFormula(a: number, b: number, c: number): number[] | number | null | undefined {
+    if (a === 0) {
+        return undefined;
+    }
+
+    if (a !== Math.trunc(a) || b !== Math.trunc(b) || c !== Math.trunc(c)) {
+        return undefined;
+    }
+
+    const discriminant = Math.sqrt((b * b) -4 * a * c);
+    const solutionOne: number = (-b + discriminant) / (2 * a);
+    const solutionTwo: number = (-b - discriminant) / (2 * a);
+
+    if (discriminant === 0) {
+        return parseFloat(solutionOne.toFixed(2));
+    }
+
+    // Square root of a negative number.
+    if (discriminant.toString() === "NaN") {
+        return null;
+    }
+
+    return [parseFloat(solutionOne.toFixed(2)), parseFloat(solutionTwo.toFixed(2))];
+}

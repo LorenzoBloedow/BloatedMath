@@ -452,5 +452,35 @@ describe("Return the greatest common divisor of two or more integers.", () => {
         });
     });
     
+    describe("Return the solution or solutions of a quadratic equation.", () => {
+        it("Will return undefined if 'a' is 0 as that would make the equation linear.", () => {
+            expect(functions.quadraticFormula(0, 2, 3)).toBeUndefined();
+        });
 
+        it("Will return one solution if the equation only has a single solution.", () => {
+            expect(functions.quadraticFormula(5, 0, 0)).toBe(0);
+        });
+
+        it("Will return undefined if any or all of the coefficients are floating-point numbers.", () => {
+            expect(functions.quadraticFormula(4, 1.2, 3)).toBeUndefined();
+            expect(functions.quadraticFormula(5.2, 9, 3.3)).toBeUndefined();
+            expect(functions.quadraticFormula(4.2, 6.7, 8.1)).toBeUndefined();
+        });
+
+        it("Will return null if the solutions are complex roots.", () => {
+            expect(functions.quadraticFormula(2, 2, 4)).toBeNull();
+        });
+
+        it("Will return the rounded solutions if the coefficients are integers.", () => {
+            // These function calls will always return an array.
+            // @ts-ignore
+            expect(functions.quadraticFormula(6, -5, 1).sort()).toStrictEqual([0.33, 0.5]);
+            // @ts-ignore
+            expect(functions.quadraticFormula(10, 47, 19).sort()).toStrictEqual([-0.45, -4.25]);
+            // @ts-ignore
+            expect(functions.quadraticFormula(-6, -72, -11).sort()).toStrictEqual([-0.15, -11.85]);
+            // @ts-ignore
+            expect(functions.quadraticFormula(6786, -6283, 4).sort()).toStrictEqual([0.00, 0.93]);
+        });
+    });
 });
