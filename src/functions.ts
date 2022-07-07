@@ -382,3 +382,34 @@ export function quadraticFormula(a: number, b: number, c: number): number[] | nu
 
     return [parseFloat(solutionOne.toFixed(2)), parseFloat(solutionTwo.toFixed(2))];
 }
+
+
+/**Returns the maximum number of pieces given 'n' cuts.
+ * 
+ * If the optional parameter 'mode' is set to 'sequence' then
+ * this function returns the lazy caterer's sequence with 'n' elements.
+*/
+export function lazyCaterer(n: number, mode: string = "formula"): number | number[] | null {
+
+    if (n < 0) {
+        return null;
+    }
+
+    if (n !== Math.trunc(n)) {
+        return null;
+    }
+
+    if (mode === "sequence") {
+        const sequence: number[] = [];
+        for (let i = 0; i < n; i++) {
+            sequence.push(((i ** 2) + i + 2) / 2)
+        }
+        return sequence;
+    }
+
+    if (n === 0) {
+        return 1;
+    }
+
+    return ((n ** 2) + n + 2) / 2; 
+}

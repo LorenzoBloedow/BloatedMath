@@ -374,113 +374,140 @@ describe("Return the greatest common divisor of two or more integers.", () => {
         expect(functions.greatestCommonDivisor([30, 20, 30, 40, 50, 80, 60])).toBe(10);
         expect(functions.greatestCommonDivisor([865, 23472, 5455, 5435, 76745, 8654])).toBe(1);
     });
-
-    describe("Return the least common multiple of two or more integers.", () => {
-        it("Will return null if one or all numbers are floating-point numbers.", () => {
-            expect(functions.leastCommonMultiple([5, 2, 7.4])).toBeNull();
-            expect(functions.leastCommonMultiple([6.2, 1.3])).toBeNull();
-        });
-
-        it("Will return 0 if one or all integers are 0.", () => {
-            expect(functions.leastCommonMultiple([63, 72, 0, 3])).toBe(0);
-            expect(functions.leastCommonMultiple([0, 0, 0, 0])).toBe(0);
-        });
-
-        it("Will return null if called with less than the minimum amount of integers.", () => {
-            expect(functions.leastCommonMultiple([])).toBeNull();
-            expect(functions.leastCommonMultiple([4])).toBeNull();
-        });
-
-        it("Will return a positive LCM if one or all integers are negative.", () => {
-            expect(functions.leastCommonMultiple([5, -77, 6, 20])).toBe(4620);
-            expect(functions.leastCommonMultiple([-1, -78, -8])).toBe(312);
-        });
-
-        it("Will return a positive LCM if the integers are positive.", () => {
-            expect(functions.leastCommonMultiple([4, 6])).toBe(12);
-            expect(functions.leastCommonMultiple([10, 5])).toBe(10);
-            expect(functions.leastCommonMultiple([6546, 2394, 452])).toBe(590_279_004);
-        });
-
-        it("Will throw if the LCM exceeds its maximum size.", () => {
-            expect(() => functions.leastCommonMultiple([634, 234, 58, Number.MAX_SAFE_INTEGER, 5])).toThrow();
-        });
+})
+describe("Return the least common multiple of two or more integers.", () => {
+    it("Will return null if one or all numbers are floating-point numbers.", () => {
+        expect(functions.leastCommonMultiple([5, 2, 7.4])).toBeNull();
+        expect(functions.leastCommonMultiple([6.2, 1.3])).toBeNull();
     });
 
-    describe("Return the first 'n' terms of the Recaman's sequence.", () => {
-        it("Will return null if the number is a floating-point number.", () => {
-            expect(functions.recamanSequence(3.2)).toBeNull();
-        });
-
-        it("Will return null if the integer is 0.", () => {
-            expect(functions.recamanSequence(0)).toBeNull();
-        });
-
-        it("Will return null if the integer is negative.", () => {
-            expect(functions.recamanSequence(-4)).toBeNull();
-        });
-
-        it("Will return 0 if the integer is 1.", () => {
-            expect(functions.recamanSequence(1)).toBe(0);
-        });
-
-        it("Will return the first 'n' terms of the sequence if the integer is positive.", () => {
-            expect(functions.recamanSequence(2)).toStrictEqual([0, 1]);
-            expect(functions.recamanSequence(4)).toStrictEqual([0, 1, 3, 6]);
-            expect(functions.recamanSequence(15)).toStrictEqual([0, 1, 3, 6, 2, 7, 13,
-                                                                 20, 12, 21, 11, 22, 10, 23, 9]);
-        });
+    it("Will return 0 if one or all integers are 0.", () => {
+        expect(functions.leastCommonMultiple([63, 72, 0, 3])).toBe(0);
+        expect(functions.leastCommonMultiple([0, 0, 0, 0])).toBe(0);
     });
 
-    describe("Return the area of a circle with a fixed-point notation.", () => {
-        it("Will return null if the number is 0.", () => {
-            expect(functions.circleArea(0)).toBeNull();
-        });
-
-        it("Will return null if the number is negative.", () => {
-            expect(functions.circleArea(-3)).toBeNull();
-        });
-
-        it("Will return the area of a circle given a positive floating-point number or integer.", () => {
-            expect(functions.circleArea(2.3)).toBe(16.62);
-            expect(functions.circleArea(143)).toBe(64242.43);
-            expect(functions.circleArea(1)).toBe(3.14);
-            expect(functions.circleArea(5)).toBe(78.54);
-            expect(functions.circleArea(0.78)).toBe(1.91);
-            expect(functions.circleArea(0.07)).toBe(0.02);
-            expect(functions.circleArea(0.32)).toBe(0.32);
-        });
+    it("Will return null if called with less than the minimum amount of integers.", () => {
+        expect(functions.leastCommonMultiple([])).toBeNull();
+        expect(functions.leastCommonMultiple([4])).toBeNull();
     });
-    
-    describe("Return the solution or solutions of a quadratic equation.", () => {
-        it("Will return undefined if 'a' is 0 as that would make the equation linear.", () => {
-            expect(functions.quadraticFormula(0, 2, 3)).toBeUndefined();
-        });
 
-        it("Will return one solution if the equation only has a single solution.", () => {
-            expect(functions.quadraticFormula(5, 0, 0)).toBe(0);
-        });
+    it("Will return a positive LCM if one or all integers are negative.", () => {
+        expect(functions.leastCommonMultiple([5, -77, 6, 20])).toBe(4620);
+        expect(functions.leastCommonMultiple([-1, -78, -8])).toBe(312);
+    });
 
-        it("Will return undefined if any or all of the coefficients are floating-point numbers.", () => {
-            expect(functions.quadraticFormula(4, 1.2, 3)).toBeUndefined();
-            expect(functions.quadraticFormula(5.2, 9, 3.3)).toBeUndefined();
-            expect(functions.quadraticFormula(4.2, 6.7, 8.1)).toBeUndefined();
-        });
+    it("Will return a positive LCM if the integers are positive.", () => {
+        expect(functions.leastCommonMultiple([4, 6])).toBe(12);
+        expect(functions.leastCommonMultiple([10, 5])).toBe(10);
+        expect(functions.leastCommonMultiple([6546, 2394, 452])).toBe(590_279_004);
+    });
 
-        it("Will return null if the solutions are complex roots.", () => {
-            expect(functions.quadraticFormula(2, 2, 4)).toBeNull();
-        });
+    it("Will throw if the LCM exceeds its maximum size.", () => {
+        expect(() => functions.leastCommonMultiple([634, 234, 58, Number.MAX_SAFE_INTEGER, 5])).toThrow();
+    });
+});
 
-        it("Will return the rounded solutions if the coefficients are integers.", () => {
-            // These function calls will always return an array.
-            // @ts-ignore
-            expect(functions.quadraticFormula(6, -5, 1).sort()).toStrictEqual([0.33, 0.5]);
-            // @ts-ignore
-            expect(functions.quadraticFormula(10, 47, 19).sort()).toStrictEqual([-0.45, -4.25]);
-            // @ts-ignore
-            expect(functions.quadraticFormula(-6, -72, -11).sort()).toStrictEqual([-0.15, -11.85]);
-            // @ts-ignore
-            expect(functions.quadraticFormula(6786, -6283, 4).sort()).toStrictEqual([0.00, 0.93]);
-        });
+describe("Return the first 'n' terms of the Recaman's sequence.", () => {
+    it("Will return null if the number is a floating-point number.", () => {
+        expect(functions.recamanSequence(3.2)).toBeNull();
+    });
+
+    it("Will return null if the integer is 0.", () => {
+        expect(functions.recamanSequence(0)).toBeNull();
+    });
+
+    it("Will return null if the integer is negative.", () => {
+        expect(functions.recamanSequence(-4)).toBeNull();
+    });
+
+    it("Will return 0 if the integer is 1.", () => {
+        expect(functions.recamanSequence(1)).toBe(0);
+    });
+
+    it("Will return the first 'n' terms of the sequence if the integer is positive.", () => {
+        expect(functions.recamanSequence(2)).toStrictEqual([0, 1]);
+        expect(functions.recamanSequence(4)).toStrictEqual([0, 1, 3, 6]);
+        expect(functions.recamanSequence(15)).toStrictEqual([0, 1, 3, 6, 2, 7, 13,
+                                                                20, 12, 21, 11, 22, 10, 23, 9]);
+    });
+});
+
+describe("Return the area of a circle with a fixed-point notation.", () => {
+    it("Will return null if the number is 0.", () => {
+        expect(functions.circleArea(0)).toBeNull();
+    });
+
+    it("Will return null if the number is negative.", () => {
+        expect(functions.circleArea(-3)).toBeNull();
+    });
+
+    it("Will return the area of a circle given a positive floating-point number or integer.", () => {
+        expect(functions.circleArea(2.3)).toBe(16.62);
+        expect(functions.circleArea(143)).toBe(64242.43);
+        expect(functions.circleArea(1)).toBe(3.14);
+        expect(functions.circleArea(5)).toBe(78.54);
+        expect(functions.circleArea(0.78)).toBe(1.91);
+        expect(functions.circleArea(0.07)).toBe(0.02);
+        expect(functions.circleArea(0.32)).toBe(0.32);
+    });
+});
+
+describe("Return the solution or solutions of a quadratic equation.", () => {
+    it("Will return undefined if 'a' is 0 as that would make the equation linear.", () => {
+        expect(functions.quadraticFormula(0, 2, 3)).toBeUndefined();
+    });
+
+    it("Will return one solution if the equation only has a single solution.", () => {
+        expect(functions.quadraticFormula(5, 0, 0)).toBe(0);
+    });
+
+    it("Will return undefined if any or all of the coefficients are floating-point numbers.", () => {
+        expect(functions.quadraticFormula(4, 1.2, 3)).toBeUndefined();
+        expect(functions.quadraticFormula(5.2, 9, 3.3)).toBeUndefined();
+        expect(functions.quadraticFormula(4.2, 6.7, 8.1)).toBeUndefined();
+    });
+
+    it("Will return null if the solutions are complex roots.", () => {
+        expect(functions.quadraticFormula(2, 2, 4)).toBeNull();
+    });
+
+    it("Will return the rounded solutions if the coefficients are integers.", () => {
+        // These function calls will always return an array.
+        // @ts-ignore
+        expect(functions.quadraticFormula(6, -5, 1).sort()).toStrictEqual([0.33, 0.5]);
+        // @ts-ignore
+        expect(functions.quadraticFormula(10, 47, 19).sort()).toStrictEqual([-0.45, -4.25]);
+        // @ts-ignore
+        expect(functions.quadraticFormula(-6, -72, -11).sort()).toStrictEqual([-0.15, -11.85]);
+        // @ts-ignore
+        expect(functions.quadraticFormula(6786, -6283, 4).sort()).toStrictEqual([0.00, 0.93]);
+    });
+});
+
+describe("Return the maximum number of pieces of a disk that can be made with 'n' cuts.", () => {
+    it("Will return 1 if 'n' is 0.", () => {
+        expect(functions.lazyCaterer(0)).toBe(1);
+    });
+
+    it("Will return null if 'n' is negative.", () => {
+        expect(functions.lazyCaterer(-4)).toBeNull();
+    });
+
+    it("Will return null if 'n' is a floating-point number.", () => {
+        expect(functions.lazyCaterer(5.7)).toBeNull();
+    });
+
+    it("Will return the maximum number of pieces of a disk, if 'n' is a positive integer.", () => {
+        expect(functions.lazyCaterer(6)).toBe(22);
+        expect(functions.lazyCaterer(9)).toBe(46);
+        expect(functions.lazyCaterer(13)).toBe(92);
+    });
+
+    it("Will return the lazy caterer's sequence, if 'mode' is set to 'sequence'.", () => {
+        expect(functions.lazyCaterer(4, "sequence")).toStrictEqual([1, 2, 4, 7]);
+        expect(functions.lazyCaterer(6, "sequence")).toStrictEqual([1, 2, 4, 7, 11, 16]);
+        expect(functions.lazyCaterer(2, "sequence")).toStrictEqual([1, 2]);
+        expect(functions.lazyCaterer(1, "sequence")).toStrictEqual([1]);
+        expect(functions.lazyCaterer(0, "sequence")).toStrictEqual([]);
     });
 });
