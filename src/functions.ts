@@ -413,3 +413,49 @@ export function lazyCaterer(n: number, mode: string = "formula"): number | numbe
 
     return ((n ** 2) + n + 2) / 2; 
 }
+
+/**Returns the Look-and-say sequence with 'n' terms.*/
+export function lookAndSaySequence(n: number): number[] | number | null {
+    if (n <= 0) {
+        return null;
+    }
+
+    if (n !== Math.trunc(n)) {
+        return null;
+    }
+
+    if (n === 1) {
+        return 1;
+    }
+
+    if (n === 2) {
+        return [1, 11];
+    }
+
+    const sequence: number[] = [1, 11];
+    let previousNumberArray: string[] = [];
+    let previousDigit: string = "";
+    let term: string[] = [];
+    let currentCount: number = 1;
+    // for loop on the last element of the 'sequence' array.
+    for (let i = 1; i <= n - 2; i++) {
+        previousNumberArray = Array.from(sequence[sequence.length - 1].toString());
+        // for loop on each character of the last element.
+        for (let i = 1; i < previousNumberArray.length; i++) {
+            previousDigit = previousNumberArray[i - 1];
+            if (previousNumberArray[i] === previousDigit) {
+                currentCount += 1;
+            } else {
+                term.push(currentCount.toString());
+                term.push(previousDigit);
+                currentCount = 1;
+            }
+        }
+        term.push(currentCount.toString());
+        term.push(previousNumberArray[previousNumberArray.length - 1]);
+        currentCount = 1;
+        sequence.push(parseInt(term.toString().replaceAll(",", "")));
+        term = [];
+    }
+    return sequence;
+}

@@ -511,3 +511,24 @@ describe("Return the maximum number of pieces of a disk that can be made with 'n
         expect(functions.lazyCaterer(0, "sequence")).toStrictEqual([]);
     });
 });
+
+describe("Given 'n', return 'n' numbers from the Look-and-say sequence.", () => {
+    it("Will return 1 if 'n' is 1.", () => {
+        expect(functions.lookAndSaySequence(1)).toBe(1);
+    });
+
+    it("Will return null if 'n' is zero or negative.", () => {
+        expect(functions.lookAndSaySequence(0)).toBeNull();
+        expect(functions.lookAndSaySequence(-4)).toBeNull();
+    });
+
+    it("Will return null if 'n' is a floating-point number.", () => {
+        expect(functions.lookAndSaySequence(453.3)).toBeNull();
+    });
+
+    it("Will return the Look-and-say sequence if 'n' is a positive integer.", () => {
+        expect(functions.lookAndSaySequence(2)).toStrictEqual([1, 11]);
+        expect(functions.lookAndSaySequence(9)).toStrictEqual([1, 11, 21, 1211, 111221,
+                                                               312211, 13112221, 1113213211, 31131211131221]);
+    });
+});
