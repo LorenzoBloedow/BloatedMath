@@ -101,3 +101,48 @@ export const BIG_APERY_CONSTANT: number = 1.202_056_903_159_594;
 export const UNIVERSAL_PARABOLIC_CONSTANT: number = 2.29;
 
 export const BIG_UNIVERSAL_PARABOLIC_CONSTANT: number = 2.295_587_149_392_638;
+
+
+export const CONNECTIVE_CONSTANT: number = 1.84;
+
+export const BIG_CONNECTIVE_CONSTANT: number = 1.847_759_065_022_573;
+
+
+export const LAPLACE_LIMIT: number = 0.66;
+
+export const BIG_LAPLACE_LIMIT: number = 0.662_743_419_349_181;
+
+
+export const RAMANUJAN_SOLDNER_CONSTANT: number = 1.45;
+
+export const BIG_RAMANUJAN_SOLDNER_CONSTANT: number = 1.451_369_234_883_381;
+
+
+export const GLAISHER_KINKELIN_CONSTANT: number = 1.28;
+
+export const BIG_GLAISHER_KINKELIN_CONSTANT: number = 1.282_427_129_100_622;
+
+
+export const CATALAN_CONSTANT: number = 0.91;
+
+export const BIG_CATALAN_CONSTANT: number = 0.915_965_594_177_219;
+
+
+export const DOTTIE_NUMBER: number = 0.73;
+
+export const BIG_DOTTIE_NUMBER: number = 0.739_085_133_215_160;
+
+
+export const MEISSEL_MERTENS_CONSTANT: number = 0.26;
+
+export const BIG_MEISSEL_MERTENS_CONSTANT: number = 0.261_497_212_847_642;
+
+
+export const GOLDEN_ANGLE: number = 2.39;
+
+export const BIG_GOLDEN_ANGLE: number = 2.399_963_229_728_653;
+
+
+export const PLASTIC_NUMBER: number = 1.32;
+
+export const BIG_PLASTIC_NUMBER: number = 1.324_717_957_244_746;

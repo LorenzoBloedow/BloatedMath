@@ -106,8 +106,51 @@ export default class BloatedMath {
     static UNIVERSAL_PARABOLIC_CONSTANT: number = constants.UNIVERSAL_PARABOLIC_CONSTANT;
     
     static BIG_UNIVERSAL_PARABOLIC_CONSTANT: number = constants.BIG_UNIVERSAL_PARABOLIC_CONSTANT;
-    
 
+    static CONNECTIVE_CONSTANT: number = constants.CONNECTIVE_CONSTANT;
+
+    static BIG_CONNECTIVE_CONSTANT: number = constants.BIG_CONNECTIVE_CONSTANT;
+
+
+    static LAPLACE_LIMIT: number = constants.LAPLACE_LIMIT;
+
+    static BIG_LAPLACE_LIMIT: number = constants.BIG_LAPLACE_LIMIT;
+
+
+    static RAMANUJAN_SOLDNER_CONSTANT: number = constants.RAMANUJAN_SOLDNER_CONSTANT;
+
+    static BIG_RAMANUJAN_SOLDNER_CONSTANT: number = constants.BIG_RAMANUJAN_SOLDNER_CONSTANT;
+
+
+    static GLAISHER_KINKELIN_CONSTANT: number = constants.GLAISHER_KINKELIN_CONSTANT;
+
+    static BIG_GLAISHER_KINKELIN_CONSTANT: number = constants.BIG_GLAISHER_KINKELIN_CONSTANT;
+
+
+    static CATALAN_CONSTANT: number = constants.CATALAN_CONSTANT;
+
+    static BIG_CATALAN_CONSTANT: number = constants.BIG_CATALAN_CONSTANT;
+
+
+    static DOTTIE_NUMBER: number = constants.DOTTIE_NUMBER;
+
+    static BIG_DOTTIE_NUMBER: number = constants.BIG_DOTTIE_NUMBER;
+
+
+    static MEISSEL_MERTENS_CONSTANT: number = constants.MEISSEL_MERTENS_CONSTANT;
+
+    static BIG_MEISSEL_MERTENS_CONSTANT: number = constants.BIG_MEISSEL_MERTENS_CONSTANT;
+
+
+    static GOLDEN_ANGLE: number = constants.GOLDEN_ANGLE;
+
+    static BIG_GOLDEN_ANGLE: number = constants.BIG_GOLDEN_ANGLE;
+
+
+    static PLASTIC_NUMBER: number = constants.PLASTIC_NUMBER;
+
+    static BIG_PLASTIC_NUMBER: number = constants.BIG_PLASTIC_NUMBER;
+    
     // Methods.
     static isPrime(n: number): boolean {
         return functions.isPrime(n);
