@@ -459,3 +459,17 @@ export function lookAndSaySequence(n: number): number[] | number | null {
     }
     return sequence;
 }
+
+/**Returns the average of a set of integers, floating-point numbers or both.
+ * 
+ * The result is rounded to the nearest decimal and formatted like this: $.$$
+*/
+export function average(numbers: number[]): number | null {
+    if (numbers.length === 0) {
+        return null;
+    }
+
+    let arraySum: number = 0;
+    numbers.forEach(e => arraySum += e);
+    return parseFloat((arraySum / numbers.length).toFixed(2));
+}

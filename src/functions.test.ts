@@ -532,3 +532,21 @@ describe("Given 'n', return 'n' numbers from the Look-and-say sequence.", () => 
                                                                312211, 13112221, 1113213211, 31131211131221]);
     });
 });
+
+describe("Return the average of a set of numbers.", () => {
+    it("Will return null if the array is empty.", () => {
+        expect(functions.average([])).toBeNull();
+    });
+
+    it("Will return the only number in the array if the array only contains one number.", () => {
+        expect(functions.average([654])).toBe(654.00);
+    });
+
+    it("Will return the average if the input is an array with more than one element.", () => {
+        expect(functions.average([6, 7, 8])).toBe(7.00);
+        expect(functions.average([64579, 9089012, 126654])).toBe(3093415.00);
+        expect(functions.average([6.26, -864.1, 535.46])).toBe(-107.46);
+        expect(functions.average([175, 937, 31, 8.482, -25, 67])).toBe(198.91);
+        expect(functions.average([-459, -340, -1467, -2])).toBe(-567.00);
+    });
+});
