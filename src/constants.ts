@@ -146,3 +146,43 @@ export const BIG_GOLDEN_ANGLE: number = 2.399_963_229_728_653;
 export const PLASTIC_NUMBER: number = 1.32;
 
 export const BIG_PLASTIC_NUMBER: number = 1.324_717_957_244_746;
+
+
+export const FEIGENBAUM_CONSTANT: number = 2.50;
+
+export const BIG_FEIGENBAUM_CONSTANT: number = 2.502_907_875_095_892;
+
+
+export const FRANSEN_ROBINSON_CONSTANT: number = 2.80;
+
+export const BIG_FRANSEN_ROBINSON_CONSTANT: number = 2.807_770_242_028_519;
+
+
+export const WEIERSTRASS_CONSTANT: number = 0.47;
+
+export const BIG_WEIERSTRASS_CONSTANT: number = 0.474_949_379_987_920;
+
+
+export const ROBBINS_CONSTANT: number = 0.66;
+
+export const BIG_ROBBINS_CONSTANT: number = 0.661_707_182_267_176;
+
+
+export const DEVICCI_TESSERACT_CONSTANT: number = 1.00;
+
+export const BIG_DEVICCI_TESSERACT_CONSTANT: number = 1.007_434_756_884_279;
+
+
+export const LOCHS_CONSTANT: number = 0.97;
+
+export const BIG_LOCHS_CONSTANT: number = 0.970_270_114_392_033;
+
+
+export const PORTER_CONSTANT: number = 1.46;
+
+export const BIG_PORTER_CONSTANT: number = 1.467_078_079_433_975;
+
+
+export const MAGIC_ANGLE: number = 0.95;
+
+export const BIG_MAGIC_ANGLE: number = 0.955_316_618_124_509;

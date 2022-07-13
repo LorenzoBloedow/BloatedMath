@@ -151,6 +151,46 @@ export default class BloatedMath {
 
     static BIG_PLASTIC_NUMBER: number = constants.BIG_PLASTIC_NUMBER;
     
+
+    static FEIGENBAUM_CONSTANT: number = constants.FEIGENBAUM_CONSTANT;
+
+    static BIG_FEIGENBAUM_CONSTANT: number = constants.BIG_FEIGENBAUM_CONSTANT;
+    
+    
+    static FRANSEN_ROBINSON_CONSTANT: number = constants.FRANSEN_ROBINSON_CONSTANT;
+    
+    static BIG_FRANSEN_ROBINSON_CONSTANT: number = constants.BIG_FRANSEN_ROBINSON_CONSTANT;
+    
+    
+    static WEIERSTRASS_CONSTANT: number = constants.WEIERSTRASS_CONSTANT;
+    
+    static BIG_WEIERSTRASS_CONSTANT: number = constants.BIG_WEIERSTRASS_CONSTANT;
+    
+    
+    static ROBBINS_CONSTANT: number = constants.ROBBINS_CONSTANT;
+    
+    static BIG_ROBBINS_CONSTANT: number = constants.BIG_ROBBINS_CONSTANT;
+    
+    
+    static DEVICCI_TESSERACT_CONSTANT: number = constants.DEVICCI_TESSERACT_CONSTANT;
+    
+    static BIG_DEVICCI_TESSERACT_CONSTANT: number = constants.BIG_DEVICCI_TESSERACT_CONSTANT;
+    
+    
+    static LOCHS_CONSTANT: number = constants.LOCHS_CONSTANT;
+    
+    static BIG_LOCHS_CONSTANT: number = constants.BIG_LOCHS_CONSTANT;
+    
+    
+    static PORTER_CONSTANT: number = constants.PORTER_CONSTANT;
+    
+    static BIG_PORTER_CONSTANT: number = constants.BIG_PORTER_CONSTANT;
+    
+    
+    static MAGIC_ANGLE: number = constants.MAGIC_ANGLE;
+    
+    static BIG_MAGIC_ANGLE: number = constants.BIG_MAGIC_ANGLE;
+
     // Methods.
     static isPrime(n: number): boolean {
         return functions.isPrime(n);
