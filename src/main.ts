@@ -172,4 +172,56 @@ export default class BloatedMath {
         return functions.parity(n)
     }
 
+    static divisorCount(n: number): number {
+        return functions.divisorCount(n);
+    }
+
+    static isHighlyComposite(n: number): boolean {
+        return functions.isHighlyComposite(n);
+    }
+
+    static divisors(n: number): number[] {
+        return functions.divisors(n);
+    }
+
+    static multiples(n: number, amount: number): number[] {
+        return functions.multiples(n, amount);
+    }
+
+    static fibonacciSequence(n: number): number[] {
+        return functions.fibonacciSequence(n);
+    }
+
+    static isFibonacciNumber(n: number): boolean {
+        return functions.isFibonacciNumber(n);
+    }
+
+    static greatestCommonDivisor(numbers: number[]) : number | null | undefined {
+        return functions.greatestCommonDivisor(numbers);
+    }
+
+    static leastCommonMultiple(numbers: number[]) : number | null {
+        return functions.leastCommonMultiple(numbers);
+    }
+
+    static recamanSequence(n: number): number | number[] | null {
+        return functions.recamanSequence(n);
+    }
+
+    static circleArea(radius: number): number | null {
+        return functions.circleArea(radius);
+    }
+
+    static lazyCaterer(n: number, mode: string = "formula"): number | number[] | null {
+        return functions.lazyCaterer(n, mode);
+    }
+
+    static lookAndSaySequence(n: number): number[] | number | null {
+        return functions.lookAndSaySequence(n);
+    }
+
+    static average(numbers: number[]): number | null {
+        return functions.average(numbers);
+    }
+    
 }
