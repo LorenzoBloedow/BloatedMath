@@ -2,7 +2,11 @@
 Extensive JavaScript Math Library Written In TypeScript.
 
 ## Usage (ES Modules)
-You can either import 'main.ts', which will import a class containing all constants and functions as static fields or you can import each function/constant as needed from the files 'functions.ts' and 'constants.ts', respectively.
+
+First install BloatedMath with ```npm i bloatedmath```<br><br>
+There are two ways to use BloatedMath:<br>
+**1.** import 'bloatedmath/src/main' to get access to a class containing all functions and constants as static fields.<br>
+**2.** import individual functions and constants from 'bloatedmath/src/functions' and 'bloatedmath/src/constants', respectively. 
 
 ## Functions
 There are 19 functions as of v1.0.0
