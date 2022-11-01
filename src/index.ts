@@ -264,7 +264,7 @@ export default class BloatedMath {
         return functions.lookAndSaySequence(n);
     }
 
-    static average(numbers): number | null {
+    static average(numbers: number[]): number | null {
         return functions.average(numbers);
     }
 }

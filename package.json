@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "devDependencies": {
@@ -8,5 +9,33 @@
     "jest": "^28.1.2",
     "jsdoc": "^3.6.10",
     "ts-jest": "^28.0.5"
-  }
+  },
+  "name": "bloatedmath",
+  "description": "Extensive JavaScript Math Library Written In TypeScript.",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LorenzoBloedow/BloatedMath.git"
+  },
+  "keywords": [
+    "math",
+    "mathematics",
+    "algorithm",
+    "constant",
+    "theorem",
+    "TypeScript",
+    "JavaScript",
+    "Bloated",
+    "BloatedMath"
+  ],
+  "author": "Lorenzo Bloedow",
+  "license": "GPL-3.0",
+  "files": [
+    "/dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/LorenzoBloedow/BloatedMath/issues"
+  },
+  "homepage": "https://github.com/LorenzoBloedow/BloatedMath#readme"
 }
